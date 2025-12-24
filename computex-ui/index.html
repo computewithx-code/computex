@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ComputeX Mini OS — Prototype</title>
+
+    <!-- Tailwind Play CDN (fast way to use Tailwind without build setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: include a simple favicon -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <style>
+      /* small helper to disable text-select on window chrome */
+      .no-select { user-select: none; -webkit-user-select: none; -moz-user-select: none; }
+    </style>
+  </head>
+  <body class="bg-slate-50">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

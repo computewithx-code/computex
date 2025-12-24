@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal overrides for the fake OS */
+body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+.app-icon { width: 64px; height: 64px; border-radius: 12px; display:flex; align-items:center; justify-content:center; }
+.window-shadow { box-shadow: 0 8px 24px rgba(15,23,42,0.08); }
+.cursor-grab { cursor: grab; }
