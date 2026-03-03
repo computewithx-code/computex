@@ -1,18 +1,14 @@
-export const api = {
-  login(data) {
-    return fetch("http://localhost:8000/api/login", {
-      method: "POST",
-      credentials: "include",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    });
-  },
-  signup(data) {
-    return fetch("http://localhost:8000/api/register", {
-      method: "POST",
-      credentials: "include",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    });
-  },
+import axios from "axios";
+
+export const api = axios.create({
+  baseURL: "http://127.0.0.1:8000",
+  withCredentials: true, // crucial for cookies
+});
+
+export const signup = async (form) => {
+  // get CSRF cookie first
+  await api.get("/sanctum/csrf-cookie");
+  // then POST to register
+  const res = await api.post("/register", form);
+  return res.data;
 };
